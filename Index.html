@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Agro Pro</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1b5e20">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="app">
+
+  <header>
+    <h1>🐄 Agro Pro</h1>
+  </header>
+
+  <main id="content">
+
+    <!-- FAZENDAS -->
+    <section id="clientes" class="screen active">
+      <h2>Fazendas</h2>
+
+      <div class="card form">
+        <input id="fazenda" placeholder="Nome da fazenda">
+        <input id="cidade" placeholder="Cidade">
+        <select id="sistema">
+          <option>Cria</option>
+          <option>Recria</option>
+          <option>Engorda</option>
+          <option>Confinamento</option>
+          <option>Leite</option>
+        </select>
+        <input id="rebanho" type="number" placeholder="Nº animais">
+        <button onclick="addCliente()">Salvar</button>
+      </div>
+
+      <div id="listaClientes"></div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <section id="produtos" class="screen">
+      <h2>Produtos</h2>
+
+      <div class="card form">
+        <input id="pNome" placeholder="Produto">
+        <input id="pConsumo" placeholder="Consumo g/dia">
+        <input id="pPreco" placeholder="Preço">
+        <button onclick="addProduto()">Salvar</button>
+      </div>
+
+      <div id="listaProdutos"></div>
+    </section>
+
+    <!-- VISITAS -->
+    <section id="visitas" class="screen">
+      <h2>Visitas</h2>
+
+      <div class="card form">
+        <input id="vCliente" placeholder="Fazenda">
+        <input id="vData" type="date">
+        <select id="vTipo">
+          <option>Prospecção</option>
+          <option>Pós-venda</option>
+          <option>Ajuste técnico</option>
+        </select>
+        <button onclick="addVisita()">Salvar</button>
+      </div>
+
+      <div id="listaVisitas"></div>
+    </section>
+
+    <!-- INDICADORES -->
+    <section id="indicadores" class="screen">
+      <h2>Indicadores</h2>
+
+      <div class="card form">
+        <input id="iRebanho" type="number" placeholder="Nº animais">
+        <input id="iConsumo" placeholder="Consumo g/dia">
+        <input id="iPreco" placeholder="Preço produto">
+        <button onclick="calcular()">Calcular</button>
+      </div>
+
+      <div id="resultado" class="card"></div>
+    </section>
+
+  </main>
+
+  <!-- NAVBAR -->
+  <nav class="bottom-nav">
+    <button onclick="nav('clientes')">🐄</button>
+    <button onclick="nav('produtos')">🧂</button>
+    <button onclick="nav('visitas')">📅</button>
+    <button onclick="nav('indicadores')">📊</button>
+  </nav>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
